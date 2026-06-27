@@ -18,12 +18,9 @@ The dashboard enables stakeholders to monitor KPIs, analyze sales trends, evalua
 
 ### Executive Dashboard
 
-![Executive Dashboard](ecommerce-sales-analytics/images/1_EXECUTIVE DASHBOARD.png)
-
----
-### Dashboard Overview
-
-![Dashboard Overview](ecommerce-sales-analytics/images/7_Dashboard_preview.png)
+<p align="center">
+  <img src="images/1_EXECUTIVE_DASHBOARD.png" width="900">
+</p>
 
 ---
 
