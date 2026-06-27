@@ -1,6 +1,6 @@
 # E-Commerce Executive Dashboard
 
-An interactive Tableau dashboard developed using the Sample Superstore dataset to analyze sales performance, profitability, customer behavior, and category contributions.
+An interactive Tableau dashboard developed using the Superstore dataset to analyze sales performance, profitability, customer behavior, and category contributions.
 
 ---
 
@@ -16,7 +16,9 @@ The dashboard enables stakeholders to monitor KPIs, analyze sales trends, evalua
 
 ### Executive Dashboard
 
-![Dashboard Preview](images/7_Dashboard_preview.png)
+<p align="center">
+  <img src="images/1_EXECUTIVE_DASHBOARD.png" width="900">
+</p>
 
 ---
 
