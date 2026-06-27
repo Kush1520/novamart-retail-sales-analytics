@@ -16,8 +16,7 @@ The dashboard enables business stakeholders to monitor key performance indicator
 
 ## NovaMart Retail Sales Executive Dashboard
 
-
-![Executive Dashboard](novamart-retail-sales-analytics/images/1_EXECUTIVE DASHBOARD.png)
+![Executive Dashboard](novamart-retail-sales-analytics/images/1_EXECUTIVE_DASHBOARD.png)
 
 ---
 
