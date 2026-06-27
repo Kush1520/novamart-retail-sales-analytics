@@ -20,8 +20,6 @@ The dashboard enables stakeholders to monitor KPIs, analyze sales trends, evalua
   <img src="ecommerce-sales-analytics/images/1_EXECUTIVE_DASHBOARD.png" width="900">
 </p>
 
----
-
 ## Features
 
 * KPI Cards
