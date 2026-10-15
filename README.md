@@ -1,255 +1,144 @@
-# NovaMart Retail Sales Executive Dashboard
+# NovaMart Retail Sales Analytics
 
-An interactive Tableau dashboard developed for a fictional retail company, **NovaMart**, using the **Superstore** dataset to analyze sales performance, profitability, customer behavior, and category contributions.
+An end-to-end retail sales analytics project using the **Sample Superstore** dataset. It combines Python-based data cleaning and exploratory analysis, SQL business queries, and an interactive Tableau Public executive dashboard to explore sales, profitability, customer performance, discounts, shipping, and regional trends.
 
----
+## Dashboard Preview
 
-# Project Overview
+![NovaMart Executive Dashboard](novamart-retail-sales-analytics/images/executive-dashboard.png)
 
-This project transforms raw retail transaction data into meaningful business insights through data visualization and dashboarding techniques.
+The Tableau dashboard includes KPI cards, monthly sales trend, category contribution, sales by sub-category, profit by region, and the top 10 states by sales. Region and category filters support interactive exploration.
 
-The dashboard enables business stakeholders to monitor key performance indicators (KPIs), analyze monthly sales trends, evaluate regional profitability, and understand category-wise sales distribution using interactive filters.
+### Dashboard Components
 
----
+| View | Preview |
+|---|---|
+| Executive KPIs — Sales, Profit, Orders, Customers, Profit Margin | ![Executive KPIs](novamart-retail-sales-analytics/images/executive-kpis.png) |
+| Monthly Sales Trend | ![Monthly sales trend](novamart-retail-sales-analytics/images/monthly-sales-trend.png) |
+| Sales by Category | ![Sales by category](novamart-retail-sales-analytics/images/sales-by-category.png) |
+| Sales by Sub-Category | ![Sales by sub-category](novamart-retail-sales-analytics/images/sales-by-subcategory.png) |
+| Profit by Region | ![Profit by region](novamart-retail-sales-analytics/images/profit-by-region.png) |
+| Sales Share by Category | ![Category share](novamart-retail-sales-analytics/images/category-share.png) |
+| Top 10 States by Sales | ![Top 10 states by sales](novamart-retail-sales-analytics/images/top-10-states-by-sales.png) |
 
-# Dashboard Preview
+## Project Highlights
 
-## NovaMart Retail Sales Executive Dashboard
+- **Data cleaning and feature engineering:** inspect missing values and duplicates, remove duplicate records, parse order and ship dates, and create `Shipping Days`, `Month`, `Year`, `Quarter`, and `Profit Margin` features.
+- **Exploratory data analysis (EDA):** investigate monthly, quarterly, and yearly sales; category and segment performance; customer and state performance; product losses; shipping modes; and discount/profit patterns.
+- **Statistical analysis:** use a correlation heatmap to examine linear relationships among Sales, Profit, Discount, Quantity, and Shipping Days.
+- **SQL analysis:** a query file contains examples for customer profitability, loss-making products, state profitability, average shipping time, and row-count checks. Load the cleaned data into a SQLite table named `sales` before running these queries.
+- **Interactive Tableau dashboard:** combine headline KPIs with trend and breakdown charts to support business review.
 
-![Executive Dashboard](novamart-retail-sales-analytics/images/1_EXECUTIVE_DASHBOARD.png)
+## Key Dashboard KPIs
 
----
-
-# Features
-
-• Executive KPI Cards
-- Total Sales
-- Total Profit
-- Total Orders
-- Total Customers
-- Profit Margin
-
-• Monthly Sales Trend Analysis
-
-• Profit by Region Analysis
-
-• Category Share Distribution
-
-• Interactive Dashboard Filters
-- Region
-- Category
-- Segment
-
-• Cross-filtering and Interactive Dashboard Navigation
-
----
-
-# Methodology
-
-## Step 1: Data Collection
-
-Business Case:
-NovaMart Retail Sales Analysis
-
-Dataset:
-Sample Superstore Dataset
-
----
-
-## Step 2: Data Understanding
-
-The dataset was explored to understand key business attributes including:
-
-- Order Date
-- Sales
-- Profit
-- Category
-- Region
-- Segment
-- Customer ID
-- Order ID
-
----
-
-## Step 3: KPI Development
-
-Created KPI worksheets for:
-
-- Total Sales
-- Total Profit
-- Total Orders
-- Total Customers
-- Profit Margin
-
----
-
-## Step 4: Sales Trend Analysis
-
-Developed a monthly sales trend visualization using:
-
-- Order Date (Month)
-- SUM(Sales)
-
-This helps identify seasonal sales patterns and business growth throughout the year.
-
----
-
-## Step 5: Regional Profit Analysis
-
-Developed a bar chart to compare profitability across business regions.
-
-Regions analyzed:
-
-- Central
-- East
-- South
-- West
-
----
-
-## Step 6: Category Analysis
-
-Created a pie chart to analyze category-wise sales contribution.
-
-Categories analyzed:
-
-- Technology
-- Furniture
-- Office Supplies
-
----
-
-## Step 7: Dashboard Development
-
-Designed an executive-level Tableau dashboard consisting of:
-
-- Executive Header
-- KPI Cards
-- Monthly Sales Trend
-- Category Share Visualization
-- Regional Profit Analysis
-- Interactive Filters
-
----
-
-# Analysis and Findings
-
-## Business KPIs
+Values shown for the full Sample Superstore dataset before filtering:
 
 | KPI | Value |
-|------|--------|
-| Total Sales | 2,297,201 |
-| Total Profit | 286,397 |
+|---|---:|
+| Total Sales | $2,297,201 |
+| Total Profit | $286,397 |
 | Total Orders | 5,009 |
 | Total Customers | 793 |
 | Profit Margin | 12.47% |
 
----
+These values can change when dashboard filters are applied. The orders KPI should count **distinct Order IDs**, not individual line items.
 
-## Monthly Sales Trend
+## Python Analysis Visuals
 
-- Sales fluctuate throughout the year.
-- Sales increase significantly during September.
-- November records the highest sales.
-- December maintains strong business performance.
-- Overall sales peak during the fourth quarter.
+The notebook saves visualizations in `novamart-retail-sales-analytics/Graphs/`.
 
----
+### Sales Trends
 
-## Regional Profit Analysis
+| Monthly Sales | Quarterly Sales | Yearly Sales Trend |
+|---|---|---|
+| ![Monthly sales](novamart-retail-sales-analytics/Graphs/Monthly_Sales_preview.png) | ![Quarterly sales](novamart-retail-sales-analytics/Graphs/Quaterly_Sales_preview.png) | ![Yearly sales](novamart-retail-sales-analytics/Graphs/Yearly_Sales_Trend_preview.png) |
 
-- West region generated the highest profit.
-- East region demonstrated strong profitability.
-- South region showed moderate profitability.
-- Central region contributed the lowest profit.
+### Category, Segment, and Profitability Analysis
 
----
+| Sales by Category | Sales by Segment | Discount vs Profit |
+|---|---|---|
+| ![Category analysis](novamart-retail-sales-analytics/Graphs/Category_preview.png) | ![Segment analysis](novamart-retail-sales-analytics/Graphs/Segment_preview.png) | ![Discount vs profit](novamart-retail-sales-analytics/Graphs/Discount_profit_preview.png) |
 
-## Category Share Analysis
+### Correlation Heatmap
 
-- Technology contributes the largest share of total sales.
-- Furniture and Office Supplies contribute nearly equal sales volumes.
-- Sales are well diversified across all product categories.
+![Correlation heatmap](novamart-retail-sales-analytics/Graphs/Heatmap_preview.png)
 
----
+**Interpretation note:** correlation describes association, not causation. Discount/profit patterns should be investigated alongside product, category, and order context before making pricing decisions.
 
-## Business Insights
+## Tools and Technologies
 
-The dashboard highlights strong sales momentum during the final quarter of the year, indicating seasonal demand. The West region consistently delivers the highest profitability, while Technology remains the highest revenue-generating category. These insights can support inventory planning, regional marketing strategies, pricing decisions, and overall business growth.
+- **Python:** Pandas, NumPy, Matplotlib, Seaborn
+- **Notebook:** Jupyter Notebook
+- **SQL:** SQLite-compatible business queries
+- **Visualization:** Tableau Public
+- **Data:** Sample Superstore CSV
 
----
-
-# Folder Structure
+## Repository Structure
 
 ```text
-novamart-retail-sales-analytics/
-
-├── dashboard/
-│   └── Executive_Dashboard.twbx
-│
-├── images/
-│   ├── 1_EXECUTIVE_DASHBOARD.png
-│   ├── 2_Consumer_sales_trend_preview.png
-│   ├── 3_Corporate_sales_trend_preview.png
-│   ├── 4_Home_Office_sales_trend_preview.png
-│   ├── 5_Category_sales_preview.png
-│   ├── 6_Profit_By_Region_preview.png
-│   └── 7_Dashboard_preview.png
-│
-├── Graphs/
-│   ├── Category_preview.png
-│   ├── Discount_profit_preview.png
-│   ├── Heatmap_preview.png
-│   ├── Monthly_Sales_preview.png
-│   ├── Quarterly_Sales_preview.png
-│   ├── Segment_preview.png
-│   └── Yearly_Sales_Trend_preview.png
-│
-├── notebooks/
-│   └── analysis.ipynb
-│
-├── Report/
-│   ├── Analysis Report.pdf
-│   └── EXECUTIVE DASHBOARD.pdf
-│
-├── sql/
-│   └── business_queries.sql
-│
-├── src/
-│
+.
 ├── README.md
-│
-└── requirements.txt
+├── requirements.txt
+└── novamart-retail-sales-analytics/
+    ├── dashboard/
+    │   └── E-commerce sales analysis dashboard.twbx
+    ├── data/
+    │   ├── Sample - Superstore.csv
+    │   └── cleaned_superstore.csv
+    ├── Graphs/
+    │   ├── Category_preview.png
+    │   ├── Discount_profit_preview.png
+    │   ├── Heatmap_preview.png
+    │   ├── Monthly_Sales_preview.png
+    │   ├── Quaterly_Sales_preview.png
+    │   ├── Segment_preview.png
+    │   └── Yearly_Sales_Trend_preview.png
+    ├── images/
+    │   ├── executive-dashboard.png
+    │   ├── executive-kpis.png
+    │   ├── monthly-sales-trend.png
+    │   ├── sales-by-category.png
+    │   ├── sales-by-subcategory.png
+    │   ├── profit-by-region.png
+    │   ├── category-share.png
+    │   └── top-10-states-by-sales.png
+    ├── notebooks/
+    │   └── analysis.ipynb
+    └── sql/
+        └── bussiness_queries.sql
 ```
 
----
+## Run the Python Analysis
 
-# Tools & Technologies
+1. Clone or download the repository.
+2. From the repository root, create and activate a virtual environment if desired.
+3. Install the dependencies:
 
-- Tableau Public
-- SQL
-- Python
-- Jupyter Notebook
-- Sample Superstore Dataset
+   ```bash
+   pip install -r requirements.txt
+   ```
 
----
+4. Open `novamart-retail-sales-analytics/notebooks/analysis.ipynb` in VS Code or Jupyter.
+5. Run the notebook cells in order. The notebook reads `data/Sample - Superstore.csv`, performs cleaning and analysis, and exports `data/cleaned_superstore.csv`.
 
-# Future Improvements
+The notebook's relative paths assume it is run from its included `notebooks` directory in a Jupyter environment.
 
-- Customer Segmentation using RFM Analysis
-- Predictive Sales Forecasting
-- Discount Impact & Price Optimization
-- Customer Lifetime Value (CLV) Analysis
-- Inventory Performance Dashboard
-- Automated ETL Pipeline using SQL & Python
+## Run the SQL Queries
 
----
+The query file is `novamart-retail-sales-analytics/sql/bussiness_queries.sql`. First load `cleaned_superstore.csv` into a SQLite database as a table named `sales`, then connect to that database using SQLTools or another SQLite client. Run one query at a time. Confirm the actual column names in the table before executing queries, because CSV column names may retain spaces and capitalization.
 
-# Repository
+## Tableau Dashboard
 
-https://github.com/Kush1520/novamart-retail-sales-analytics
+Open `novamart-retail-sales-analytics/dashboard/E-commerce sales analysis dashboard.twbx` in Tableau Public/Desktop. The packaged workbook contains the dashboard and its embedded data source. Use the dashboard filters to compare regions and categories; clear filters to return to the overall KPI values.
 
----
+## Potential Next Steps
 
-GitHub:
-https://github.com/Kush1520
+- Customer segmentation using RFM analysis
+- Sales forecasting
+- Discount and margin optimization by sub-category
+- Customer lifetime value analysis
+- Inventory performance analysis
+- Repeatable ETL workflow for cleaning, loading, and refreshing the SQLite dataset
+
+## Repository
+
+[GitHub repository](https://github.com/Kush1520/novamart-retail-sales-analytics) · [GitHub profile](https://github.com/Kush1520)
