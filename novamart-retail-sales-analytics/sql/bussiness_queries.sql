@@ -36,3 +36,8 @@ AVG(shipping_days)
 FROM sales
 
 GROUP BY ship_mode;
+
+-- 
+
+SELECT COUNT(*) AS total_rows
+FROM sales;
